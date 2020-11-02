@@ -1,9 +1,5 @@
 let count=0;
 
-//function on right/wrong click to make the next div appear
-let showNext = (i) => {
-    document.getElementsByClassName('container')[i].nextElementSibling.style.display = "block";
-}
 
 //function thad adds red/green background on clicking wrong/right answer
 window.onload = (event) => {
@@ -30,13 +26,18 @@ for (let j = 0; j < rightanswers.length; j++) {
         )}
 }
 
-//onsubmit function: count++ and make result visible
-let submit = () => {
-    document.getElementById('result').style.visibility="visible";
-    document.getElementById('count').innerHTML = count;
-    let outcome = document.getElementById('outcome');
-    if (count < 6) {
-        outcome.innerHTML = ""
+  //function on right/wrong click to make the next div appear
+let showNext = (i) => {
+    let arr = document.getElementsByClassName('container');
+    arr[i].nextElementSibling.style.display = "block";
+    if (i == 9) {
+        document.getElementById('count').innerHTML = count;
+        let outcome = document.getElementById('outcome');
+        if (count < 6) {
+            outcome.innerHTML = "";
+        }
+        if (count == 1) {
+            document.getElementById('plural').innerHTML="";
+        }
     }
-    window.scrollBy(0, 450);
 }

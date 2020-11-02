@@ -75,24 +75,9 @@ header > div {
     cursor: pointer;
 }
 
-button {
-    background-color: green;
-    border-radius: 5px;
-    color:white;
-    border: none;
-    padding:5px;
-    cursor:pointer;
-}
-
-.button {
-    width: 100%;
-    display: none;
-    margin: 30px;
-}
 
 #result {
     margin: 30px;
-    display: flex;
-    justify-content: center;
-    visibility:hidden;
+    text-align: center;
+    display:none;
 }
