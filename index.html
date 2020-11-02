@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter Quiz</title>
+    <link rel="icon" href="icon.png" type="image/icon type">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+    </style>
+    <script src="index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div>HARRY POTTER QUIZ</div>
+    </header>
+    <div class="description">Test your knowledge of the Harry Potter World!</div>
+    
+    <div class="quiz">
+       
+        <div class="container">
+            <div class="question">1. From what King’s Cross platform does the Hogwarts Express leave?</div>
+            <div class="answers">
+                <div onclick="showNext(0)" class="answer wrong">Eight and One-quarter</div>
+                <div onclick="showNext(0)" class="answer right">Nine and Three-quarters</div>
+                <div onclick="showNext(0)" class="answer wrong">Five and a Half</div>
+                <div onclick="showNext(0)" class="answer wrong">Eleven</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">2. Which of these is NOT one of the Unforgivable Curses?</div>
+            <div class="answers">
+                <div onclick="showNext(1)" class="answer wrong">Cruciatus Curse</div>
+                <div onclick="showNext(1)" class="answer wrong">Imperius Curse</div>
+                <div onclick="showNext(1)" class="answer right">Sectumsempra</div>
+                <div onclick="showNext(1)" class="answer wrong">Avada Kedavra</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">3. Where does Hermione brew her first batch of Polyjuice Potion?</div>
+            <div class="answers">
+                <div onclick="showNext(2)" class="answer right">Moaning Myrtle’s Bathroom</div>
+                <div onclick="showNext(2)" class="answer wrong">The Hogwarts Kitchen</div>
+                <div onclick="showNext(2)" class="answer wrong">The Room of Requirement</div>
+                <div onclick="showNext(2)" class="answer wrong">The Gryffindor Common Room</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">4. Who has been stealing Harry’s letters from Ron and Hermione at the beginning of ‘Harry Potter and the Chamber of Secrets’?</div>
+            <div class="answers">
+                <div onclick="showNext(3)" class="answer wrong">Dumbledore</div>
+                <div onclick="showNext(3)" class="answer wrong">Draco Malfoy</div>
+                <div onclick="showNext(3)" class="answer right">Dobby</div>
+                <div onclick="showNext(3)" class="answer wrong">The Dursleys</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">5. Which is NOT a form of currency in the wizarding world?</div>
+            <div class="answers">
+                <div onclick="showNext(4)" class="answer wrong">Sickles</div>
+                <div onclick="showNext(4)" class="answer wrong">Galleons</div>
+                <div onclick="showNext(4)" class="answer wrong">Knuts</div>
+                <div onclick="showNext(4)" class="answer right">Doxies</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">6. Where does Dumbledore’s Army meet in ‘Harry Potter and the Order of the Phoenix’?</div>
+            <div class="answers">
+                <div onclick="showNext(5)" class="answer right">The Room of Requirement</div>
+                <div onclick="showNext(5)" class="answer wrong">The Gryffindor Common Room</div>
+                <div onclick="showNext(5)" class="answer wrong">Hagrid’s House</div>
+                <div onclick="showNext(5)" class="answer wrong">The Shrieking Shack</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">7. Which of the Marauders was not an animagus?</div>
+            <div class="answers">
+                <div onclick="showNext(6)" class="answer wrong">Peter Pettigrew</div>
+                <div onclick="showNext(6)" class="answer right">Remus Lupin</div>
+                <div onclick="showNext(6)" class="answer wrong">James Potter</div>
+                <div onclick="showNext(6)" class="answer wrong">Sirius Black</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">8. Who kills Dumbledore at the end of "The Half-Blood Prince"?</div>
+            <div class="answers">
+                <div onclick="showNext(7)" class="answer wrong">Lucius Malfoy</div>
+                <div onclick="showNext(7)" class="answer wrong">Draco Malfoy</div>
+                <div onclick="showNext(7)" class="answer right">Snape</div>
+                <div onclick="showNext(7)" class="answer wrong">Bellatrix Lestrange</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">9. Who destroys a horcrux first?</div>
+            <div class="answers">
+                <div onclick="showNext(8)" class="answer right">Harry Potter</div>
+                <div onclick="showNext(8)" class="answer wrong">Neville Longbottom</div>
+                <div onclick="showNext(8)" class="answer wrong">Hermione Granger</div>
+                <div onclick="showNext(8)" class="answer wrong">Lord Voldemort</div>
+            </div>
+        </div>
+
+        
+        <div class="container hidden">
+            <div class="question">10. Who destroyed the last remaining horcrux?</div>
+            <div class="answers">
+                <div onclick="showNext(9)" class="answer wrong">Harry Potter</div>
+                <div onclick="showNext(9)" class="answer wrong">Lord Voldemort</div>
+                <div onclick="showNext(9)" class="answer wrong">Hermione Granger</div>
+                <div onclick="showNext(9)" class="answer right">Neville Longbottom</div>
+            </div>
+        </div>
+
+        <div onclick=submit() class="button">
+            <button type="submit">Submit</button>
+        </div>
+
+        <div id="result">
+            <p>You have got <span id="count">x</span> questions right! <span id="outcome">Well done!</span></p>
+        </div>
+    </div>
+
+</body>
+</html>
