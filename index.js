@@ -1,10 +1,10 @@
-let count=0;
+let count=1;
 
 
 //function thad adds red/green background on clicking wrong/right answer
 window.onload = (event) => {
-let wronganswers = document.getElementsByClassName("wrong");
-let rightanswers = document.getElementsByClassName("right");
+const wronganswers = document.getElementsByClassName("wrong");
+const rightanswers = document.getElementsByClassName("right");
 for (let i = 0; i < wronganswers.length; i++) {
         wronganswers[i].addEventListener('click', getRed = () => {
         wronganswers[i].style.backgroundColor = "rgb(255, 73, 59)";
@@ -22,17 +22,18 @@ for (let j = 0; j < rightanswers.length; j++) {
         $(rightanswers[j]).css({"pointer-events": "none"});
         window.scrollBy(0, 350);
         count++;
+        console.log(count);
             }
         )}
 }
 
   //function on right/wrong click to make the next div appear
-let showNext = (i) => {
-    let arr = document.getElementsByClassName('container');
+const showNext = (i) => {
+    const arr = document.getElementsByClassName('container');
     arr[i].nextElementSibling.style.display = "block";
     if (i == 9) {
         document.getElementById('count').innerHTML = count;
-        let outcome = document.getElementById('outcome');
+        const outcome = document.getElementById('outcome');
         if (count < 6) {
             outcome.innerHTML = "";
         }
